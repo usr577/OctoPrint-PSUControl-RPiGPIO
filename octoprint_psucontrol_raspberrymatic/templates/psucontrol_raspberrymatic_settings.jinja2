@@ -3,26 +3,33 @@
 <!-- /ko -->
 
 <form class="form-horizontal">
+    <h4>General</h4>
+    <div class="control-group">
+        <div class="controls">
+        <label class="control-label">HM-IP<br/><span class="help-inline">IP of raspberrymatic with "http(s)://"</span></label>
+            <input type="text" class="input-mini" data-bind="value: settings.plugins.psucontrol_raspberrymatic.ip"> <input type="checkbox" data-bind="checked: settings.plugins.psucontrol_raspberrymatic.enableSensing"> Enable
+        </div>
+    </div>
     <h4>Switching</h4>
     <div class="control-group">
         <label class="control-label">On Command<br/><span class="help-inline">None to disable</span></label>
         <div class="controls">
-            <input type="text" class="input-mini" data-bind="value: settings.plugins.psucontrol_raspberrymatic.onCommand">
+            <textarea rows="1" class="block" data-bind="value: settings.plugins.psucontrol_raspberrymatic.onCommand"></textarea>
         </div>
     </div>
     <div class="control-group">
         <label class="control-label">Off Command<br/><span class="help-inline">None to disable</span></label>
         <div class="controls">
-            <input type="text" class="input-mini" data-bind="value: settings.plugins.psucontrol_raspberrymatic.offCommand">
+            <textarea rows="1" class="block" data-bind="value: settings.plugins.psucontrol_raspberrymatic.offCommand"></textarea>
         </div>
     </div>
     <br />
 
     <h4>Sensing</h4>
     <div class="control-group">
-        <label class="control-label">Pin<br/><span class="help-inline">Zero to disable</span></label>
         <div class="controls">
-            <input type="text" class="input-mini" data-bind="value: settings.plugins.psucontrol_raspberrymatic.sensingCommand"> <input type="checkbox" data-bind="checked: settings.plugins.psucontrol_raspberrymatic.enableSensing"> Enable
+            <label class="control-label">Sensing Command<br/><span class="help-inline">None to disable</span></label>
+            <input type="text" class="input-mini" data-bind="value: settings.plugins.psucontrol_raspberrymatic.sensingCommand">
         </div>
     </div>
 </form>

@@ -22,10 +22,10 @@ class PSUControl_Raspberrymatic(octoprint.plugin.StartupPlugin,
 
     def get_settings_defaults(self):
         return dict(
+            ip = 'None',
             onCommand = 'None',
             offCommand = 'None',
             senseCommand = 'None',
-            enableSensing = False,
         )
 
 
@@ -57,11 +57,11 @@ class PSUControl_Raspberrymatic(octoprint.plugin.StartupPlugin,
         psucontrol_helpers['register_plugin'](self)
 
     def turn_psu_on(self):
-        if self.config['onCommand'] == 'None' or self.config['offCommand'] == 'None':
+        if self.config['onCommand'] == 'None' or self.config['offCommand'] == 'None' or self.config['ip'] == 'None':
             self._logger.warning("Switching is not enabled")
             return
         try:
-            requests.get(self.config['onCommand'])
+            requests.get(self.config['ip'] + self.config['onCommand'])
         except Exception:
             self._logger.exception("Exception while Switching")
 
@@ -69,23 +69,23 @@ class PSUControl_Raspberrymatic(octoprint.plugin.StartupPlugin,
 
 
     def turn_psu_off(self):
-        if self.config['offCommand'] == 'None' or self.config['onCommand'] == 'None':
+        if self.config['offCommand'] == 'None' or self.config['onCommand'] == 'None' or self.config['ip'] == 'None':
             self._logger.warning("Switching is not enabled")
             return
         try:
-            requests.get(self.config['offCommand'])
+            requests.get(self.config['ip'] + self.config['offCommand'])
         except Exception:
             self._logger.exception("Exception while Switching")
 
 
     def get_psu_state(self):
-        if self.config['senseCommand'] == 'None':
+        if self.config['senseCommand'] == 'None' or self.config['ip'] == 'None':
             self._logger.warning("Sensing is not enabled")
             return 0
 
         r = 0
         try:
-            r = ET.fromstring(requests.get(self.config['senseCommand']).text).find("datapoint").get("value")
+            r = ET.fromstring(requests.get(self.config['ip'] + self.config['senseCommand']).text).find("datapoint").get("value")
         except Exception:
             self._logger.exception("Exception while reading State")
             return False
