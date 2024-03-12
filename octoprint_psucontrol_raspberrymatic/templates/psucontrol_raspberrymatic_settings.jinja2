@@ -7,7 +7,7 @@
     <div class="control-group">
         <div class="controls">
         <label class="control-label">HM-IP<br/><span class="help-inline">IP of raspberrymatic with "http(s)://"</span></label>
-            <input type="text" class="input-mini" data-bind="value: settings.plugins.psucontrol_raspberrymatic.ip"> <input type="checkbox" data-bind="checked: settings.plugins.psucontrol_raspberrymatic.enableSensing"> Enable
+            <textarea rows="1" class="block" data-bind="value: settings.plugins.psucontrol_raspberrymatic.ip"></textarea>
         </div>
     </div>
     <h4>Switching</h4>
@@ -29,7 +29,7 @@
     <div class="control-group">
         <div class="controls">
             <label class="control-label">Sensing Command<br/><span class="help-inline">None to disable</span></label>
-            <input type="text" class="input-mini" data-bind="value: settings.plugins.psucontrol_raspberrymatic.sensingCommand">
+            <textarea rows="1" class="block" data-bind="value: settings.plugins.psucontrol_raspberrymatic.senseCommand"></textarea>
         </div>
     </div>
 </form>
