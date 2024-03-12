@@ -6,6 +6,7 @@ __license__ = "GNU Affero General Public License http://www.gnu.org/licenses/agp
 __copyright__ = "Copyright (C) 2021 Shawn Bruce - Released under terms of the AGPLv3 License"
 
 import octoprint.plugin
+import requests
 
 class PSUControl_RPiGPIO(octoprint.plugin.StartupPlugin,
                          octoprint.plugin.RestartNeedingPlugin,
