@@ -3,14 +3,14 @@ import setuptools
 
 ########################################################################################################################
 
-plugin_identifier = "psucontrol_rpigpio"
+plugin_identifier = "psucontrol_raspberrymatic"
 plugin_package = "octoprint_%s" % plugin_identifier
-plugin_name = "OctoPrint-PSUControl-RPiGPIO"
-plugin_version = "1.0.4"
-plugin_description = "Adds legacy RPi.GPIO to OctoPrint-PSUControl as a sub-plugin"
-plugin_author = "Shawn Bruce"
-plugin_author_email = "kantlivelong@gmail.com"
-plugin_url = "https://github.com/kantlivelong/OctoPrint-PSUControl-RPiGPIO"
+plugin_name = "OctoPrint-PSUControl-Raspberrymatic"
+plugin_version = "1.0"
+plugin_description = "Adds Homematic(HTTP API) compatibility to OctoPrint-PSUControl as a sub-plugin"
+plugin_author = "usr577"
+plugin_author_email = "beneoesdorfg@gmail.com"
+plugin_url = "https://github.com/usr577/OctoPrint-PSUControl-RPiGPIO"
 plugin_license = "AGPLv3"
 plugin_additional_data = []
 
