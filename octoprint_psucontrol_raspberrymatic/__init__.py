@@ -90,7 +90,12 @@ class PSUControl_Raspberrymatic(octoprint.plugin.StartupPlugin,
             self._logger.exception("Exception while reading State")
             return False
         self._logger.debug("Result: {}".format(r))
-        r = bool(r)
+        if r == "true":
+            r = True
+        elif r == "false":
+            r = False
+        else:
+            r = bool(r)
 
         return r
 
