@@ -10,7 +10,7 @@ plugin_version = "1.0"
 plugin_description = "Adds Homematic(HTTP API) compatibility to OctoPrint-PSUControl as a sub-plugin"
 plugin_author = "usr577"
 plugin_author_email = "beneoesdorf@gmail.com"
-plugin_url = "https://github.com/usr577/OctoPrint-PSUControl-RPiGPIO"
+plugin_url = "https://github.com/usr577/OctoPrint-PSUControl-Raspberrymatic"
 plugin_license = "AGPLv3"
 plugin_additional_data = []
 
