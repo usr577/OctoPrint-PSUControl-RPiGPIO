@@ -17,9 +17,6 @@ class PSUControl_Raspberrymatic(octoprint.plugin.StartupPlugin,
     def __init__(self):
         self.config = dict()
 
-        self._configuredGPIOPins = []
-
-
     def get_settings_defaults(self):
         return dict(
             ip = 'None',
@@ -127,11 +124,11 @@ class PSUControl_Raspberrymatic(octoprint.plugin.StartupPlugin,
                 # version check: github repository
                 type="github_release",
                 user="usr577",
-                repo="OctoPrint-PSUControl-RPiGPIO",
+                repo="OctoPrint-PSUControl-Raspberrymatic",
                 current=self._plugin_version,
 
                 # update method: pip w/ dependency links
-                pip="https://github.com/usr577/OctoPrint-PSUControl-RPiGPIO/archive/{target_version}.zip"
+                pip="https://github.com/usr577/OctoPrint-PSUControl-Raspberrymatic/archive/{target_version}.zip"
             )
         )
 
